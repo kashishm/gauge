@@ -413,7 +413,7 @@ textarea:focus {
     text-decoration: none;
     color: #777;
     display: block;
-    width: 200px;
+    width: 300px;
     -webkit-transition: font-size 0.3s ease, background-color 0.3s ease;
     -moz-transition: font-size 0.3s ease, background-color 0.3s ease;
     -o-transition: font-size 0.3s ease, background-color 0.3s ease;
