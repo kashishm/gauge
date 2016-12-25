@@ -4,7 +4,7 @@ from gauge.config import config
 from gauge.entity import define
 from gauge.execution import execution
 from gauge.ide import ide, ide_feature
-from gauge.info import gauge_info, why_gauge, examples
+from gauge.info import gauge_info, why_gauge, examples, getting_started
 from gauge.init import project, initialization
 from gauge.init import skeleton
 from gauge.install import installation
