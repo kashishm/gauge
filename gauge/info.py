@@ -48,3 +48,13 @@ def examples(args, query):
         "Python Selenium": "https://github.com/kashishm/gauge-example-python",
         "JS Selenium": "https://github.com/getgauge-contrib/gauge-js/blob/master/examples",
     })
+
+
+def getting_started(args, query):
+    return Result(message="""
+The following links can help you get started.
+""", links={
+        "Getting Started": "http://getgauge.io/documentation/user/current/getting_started/",
+        "Getting Started in 3 Steps": "http://getgauge.io/documentation/user/current/examples/getting_started_3_minutes.html",
+        "Examples": "http://getgauge.io/documentation/user/current/examples/",
+    })

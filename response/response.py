@@ -22,7 +22,7 @@ responses = {
     "initialization": initialization, "installation": installation, "define": define, "why gauge": why_gauge,
     "examples": examples, "project": project, "skeleton": skeleton, "cheat sheet": cheat_sheet,
     "language features": language_features, "troubleshoot": troubleshoot, "report details": report_details,
-    "ci": ci, "config": config, "execution": execution, "ide feature": ide_feature,
+    "ci": ci, "config": config, "execution": execution, "ide feature": ide_feature, "getting started": getting_started,
 }
 
 
