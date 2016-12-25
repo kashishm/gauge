@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Gauge</title>
+    <link rel="shortcut icon" type="image/x-icon" href="https://kashishm.github.io/favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="styles/style.css">
+    <script type="text/javascript" src="js/api.ai.min.js"></script>
+</head>
+
+<body>
+    <div class="menu">
+        <a href="http://getgauge.io" target="_blank" class="back"><i class="fa fa-angle-left"></i> <img src="images/gauge.jpg" draggable="false"/></a>
+        <div class="name">Gauge</div>
+        <div class="description">Light-weight cross-platform test automation tool</div>
+    </div>
+    <ol class="chat" id="chatarea">
+    </ol>
+    <div class="empty"></div>
+    <div class="typezone">
+        <form>
+            <input type="button" class="clear" value="" onclick="clearChat()" />
+            <textarea id="message" type="text" placeholder="Type a message..."></textarea>
+            <input id="send" type="button" class="send" value="" onclick="reply()" />
+        </form>
+    </div>
+    <script type="text/javascript" src="js/index.js"></script>
+</body>
+
+</html>
