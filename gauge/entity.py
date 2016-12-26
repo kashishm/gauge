@@ -26,8 +26,8 @@ Context steps can be used to set up data before running scenarios.
 
 tag = Result(message="""
 Tags are used to associate labels with specifications or scenarios.
-Tags are written as comma separated values in the spec with a prefix `Tags:`.
-""")
+Tags are written as comma separated values in the spec with a prefix `tag:`. For example:
+""", code="Tags: tag1, tag2")
 
 teardown = Result(message="""
 Tear Down Steps are the steps defined in a spec after the last scenario.

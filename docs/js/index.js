@@ -49,9 +49,10 @@ const clearChat = () => {
 }
 
 const convertToHtml = (text) => {
-    text = text.replace(/</g, "&lt;").replace(/>/g, "&gt;");
-    return text.split("\n").map((line) => line.trim() === "" ? "<p><br></p>" : `<p>${line}</p>`).join("");
+    return sanitize(text).split("\n").map((line) => line.trim() === "" ? "<p><br></p>" : `<p>${line}</p>`).join("");
 }
+
+const sanitize = (text) => text.replace(/</g, "&lt;").replace(/>/g, "&gt;");
 
 const getOtherMessage = (res) => {
     if (!res['data'] && !res['speech'])
@@ -59,7 +60,7 @@ const getOtherMessage = (res) => {
     let message = res['speech'] ? convertToHtml(res['speech']) : "";
     if (res['data']) {
         if (res['data']['code'])
-            message += `<pre>${res['data']['code']}</pre>`;
+            message += `<pre>${sanitize(res['data']['code'])}</pre>`;
         const keys = Object.keys(res['data']['links'])
         if (keys.length > 0) {
             if (keys.length > 1)
