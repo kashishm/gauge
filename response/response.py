@@ -2,6 +2,7 @@
 from gauge.ci import ci
 from gauge.config import config
 from gauge.entity import define
+from gauge.errors import open_files, start_failed, validation_failed
 from gauge.execution import execution
 from gauge.ide import ide, ide_feature
 from gauge.info import gauge_info, why_gauge, examples, getting_started
@@ -25,6 +26,7 @@ responses = {
     "language features": language_features, "troubleshoot": troubleshoot, "report details": report_details,
     "ci": ci, "config": config, "execution": execution, "ide feature": ide_feature, "getting started": getting_started,
     "plugin install location": install_location, "plugin offline installation": offline_installation,
+    "too many open files": open_files, "failed to start a runner": start_failed, "validation failed": validation_failed,
 }
 
 
