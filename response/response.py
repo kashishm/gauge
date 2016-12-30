@@ -10,6 +10,7 @@ from gauge.init import skeleton
 from gauge.install import installation
 from gauge.language import language, language_features
 from gauge.operation import parallel, serial, validate, filter
+from gauge.plugin import install_location, offline_installation
 from gauge.reporting import reporting, report_details
 from gauge.run import run_tool
 from gauge.syntax import cheat_sheet
@@ -23,6 +24,7 @@ responses = {
     "examples": examples, "project": project, "skeleton": skeleton, "cheat sheet": cheat_sheet,
     "language features": language_features, "troubleshoot": troubleshoot, "report details": report_details,
     "ci": ci, "config": config, "execution": execution, "ide feature": ide_feature, "getting started": getting_started,
+    "plugin install location": install_location, "plugin offline installation": offline_installation,
 }
 
 

@@ -1,24 +1,5 @@
 from response.result import Result
 
-why = Result(message="""
-The communication breakdowns between Developers and Business Stakeholders is a common risk of software development.
-Gauge is an automation tool that allows requirements to be written in a way that will be understood by
-all roles in a project and help bridge the gap.
-
-Some of the key features of Gauge that make it stand unique include:
-
-* A rich markup based on markdown
-* Simple, Flexible and Rich Syntax
-* Business Language Tests : Supports the concept of executable documentation
-* Consistent Cross Platform/Language Support for writing test code.
-* Open Source, so it could be shared freely and improved by others as well
-* A modular architecture with plugin support.
-* Extensible through plugins and Hackable
-* Supports External Data Sources
-* Helps you create Maintainable and Understandable test suites
-* IDE Support
-""")
-
 
 def gauge_info(args, query):
     return Result(message="""
@@ -35,7 +16,13 @@ Gauge is an open source, light-weight cross-platform test automation tool.
 
 
 def why_gauge(args, query):
-    return why
+    return Result(message="""
+The communication breakdowns between Developers and Business Stakeholders is a common risk of software development.
+Gauge is an automation tool that allows requirements to be written in a way that will be understood by
+all roles in a project and help bridge the gap.
+""", links={
+        "read more": "http://getgauge.io/documentation/user/current/why_gauge.html"
+    })
 
 
 def examples(args, query):
