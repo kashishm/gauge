@@ -22,3 +22,19 @@ These generally occur if step implementation is not found for a particular step.
 * Ensure the step implementation for the step has been added.
 * The step template marking the step in code is case sensitive and should match the step usage in the spec file.
 """)
+
+
+def gauge_api_error(a, q):
+    return Result(message="""
+This can occur because of following reasons :
+
+* Gauge is not installed
+* Gauge is installed at custom location and custom_install_location/bin is not in PATH.
+
+To Solve this :
+
+* If gauge is not installed, install gauge
+* If gauge is installed at custom location, add custom_install_location/bin to PATH
+* On custom installation location Set GAUGE_ROOT to custom_install_location
+* Restart Intellij
+""")
