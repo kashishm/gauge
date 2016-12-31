@@ -1,7 +1,8 @@
+from gauge.constants import READ_MORE
 from response.result import Result
 
 
-def gauge_info(args, query):
+def gauge_info(a, q):
     return Result(message="""
 Gauge is an open source, light-weight cross-platform test automation tool.
 """, links={
@@ -15,17 +16,16 @@ Gauge is an open source, light-weight cross-platform test automation tool.
     })
 
 
-def why_gauge(args, query):
+def why_gauge(a, q):
     return Result(message="""
 The communication breakdowns between Developers and Business Stakeholders is a common risk of software development.
-Gauge is an automation tool that allows requirements to be written in a way that will be understood by
-all roles in a project and help bridge the gap.
+Gauge is an automation tool that allows requirements to be written in a way that will be understood by all roles in a project and help bridge the gap.
 """, links={
-        "read more": "http://getgauge.io/documentation/user/current/why_gauge.html"
+        READ_MORE: "http://getgauge.io/documentation/user/current/why_gauge.html"
     })
 
 
-def examples(args, query):
+def examples(a, q):
     return Result(message="Following are the links to examples", links={
         "Java Selenium": "https://github.com/getgauge/gauge-example-java",
         "Java Sahi": "https://github.com/getgauge/gauge-example-sahi",
@@ -37,7 +37,7 @@ def examples(args, query):
     })
 
 
-def getting_started(args, query):
+def getting_started(a, q):
     return Result(message="""
 The following links can help you get started.
 """, links={

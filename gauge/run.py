@@ -95,7 +95,7 @@ gauge --install <plugin_name> //install specific plugin
 }}
 
 
-def run_tool(args, query):
+def run_tool(args, q):
     if args['runTool'] in tools and args['operation'] in tools[args['runTool']]:
         return tools[args['runTool']][args['operation']]
     return Result(message="Operation {} is not supported in {}".format(args['operation'], args['runTool']))

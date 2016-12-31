@@ -1,7 +1,7 @@
 from response.result import Result
 
 
-def troubleshoot(args, query):
+def troubleshoot(a, q):
     return Result(message="Troubleshooting links", links={
         "Logs": "http://getgauge.io/documentation/user/current/troubleshooting/logs.html",
         "Installation": "http://getgauge.io/documentation/user/current/troubleshooting/installation.html",

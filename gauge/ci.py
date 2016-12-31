@@ -9,7 +9,7 @@ ci_tools = {
 }
 
 
-def ci(args, query):
+def ci(args, q):
     if args["ci"] in ci_tools:
         key = args["ci"].capitalize() + " Gauge " + DOCUMENTATION
         return Result(message="""

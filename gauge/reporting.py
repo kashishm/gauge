@@ -21,7 +21,7 @@ When the specs are executed, the html report is generated in reports directory i
 }
 
 
-def reporting(args, query):
+def reporting(a, q):
     return Result(message="""
 Gauge can generate following types of reports:
 

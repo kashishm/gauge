@@ -22,7 +22,7 @@ Project Structure:
 """
 
 
-def project(args, query):
+def project(a, q):
     return Result(message=structure.format(skeleton_files['env'], skeleton_files['specs'], skeleton_files['manifest']),
                   links={
                       DOCUMENTATION: "http://getgauge.io/documentation/user/current/getting_started/project_structure/",
@@ -40,6 +40,6 @@ def skeleton(args, query):
     return Result(message=skeleton_files[args['skeleton']] if args['skeleton'] in skeleton_files else fallback(query))
 
 
-def initialization(args, query):
+def initialization(args, q):
     return Result(
         message="Run `gauge --init {}` to initialize a {} project.".format(args['template'], args['template']))

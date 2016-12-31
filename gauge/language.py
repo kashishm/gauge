@@ -188,7 +188,7 @@ language_map = {
 }
 
 
-def language(args, query):
+def language(a, q):
     return Result(
         message="""
 Currently, Gauge supports following languages

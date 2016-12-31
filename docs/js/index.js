@@ -48,9 +48,7 @@ const clearChat = () => {
     document.getElementById('message').focus();
 }
 
-const convertToHtml = (text) => {
-    return sanitize(text).split("\n").map((line) => line.trim() === "" ? "<p><br></p>" : `<p>${line}</p>`).join("");
-}
+const convertToHtml = (text) => sanitize(text).split("\n").map((line) => line.trim() === "" ? "<p><br></p>" : `<p>${line}</p>`).join("");
 
 const sanitize = (text) => text.replace(/</g, "&lt;").replace(/>/g, "&gt;");
 
