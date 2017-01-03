@@ -45,3 +45,25 @@ The following links can help you get started.
         "Getting Started in 3 Steps": "http://getgauge.io/documentation/user/current/examples/getting_started_3_minutes.html",
         "Examples": "http://getgauge.io/documentation/user/current/examples/",
     })
+
+
+def feedback(a, q):
+    return Result(message="""
+We really appreciate your feedback. Please log an issue in our Github repo for any new feature/enhancements/bugs.
+""", links={
+        "Github Repository": "https://github.com/getgauge/gauge/issues",
+    })
+
+
+def contribute(a, q):
+    return Result(message="""
+Coding is definitely not the only way you can contribute to Gauge.
+There are many valuable ways to contribute to the product and to help the growing Gauge community.
+""", links={
+        "Test Gauge": "https://github.com/getgauge/gauge-tests",
+        "Discuss with the Community": "https://groups.google.com/forum/#!forum/getgauge",
+        "Blog about Gauge": "http://getgauge.io/blog/index.html",
+        "Enhance our Examples": "http://getgauge.io/documentation/user/current/examples/",
+        "Improve our Documentation": "https://github.com/getgauge/documentation",
+        "Code for Gauge": "https://github.com/getgauge/gauge/wiki/Contributing",
+    })
