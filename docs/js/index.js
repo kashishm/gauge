@@ -31,9 +31,17 @@ const reply = () => {
 }
 
 const handleResponse = (data) => {
-    let otherMessage = getOtherMessage(data['result']['fulfillment']);
-    document.getElementById('chatarea').innerHTML += otherMessage;
-    scrollToLastMessage();
+    const res = data['result']['fulfillment'];
+    if (!res['data'] && !res['speech'])
+        client.textRequest(question).then(handleSecondResponse).catch(handleError);
+    addMessage(res);
+}
+
+const handleSecondResponse = (data) => {
+    const res = data['result']['fulfillment'];
+    if (!res['data'] && !res['speech'])
+        return `<p class="notification">Server is unable to respond. Please try again.</p>`;
+    addMessage(res);
 }
 
 const handleError = (error) => {
@@ -48,13 +56,16 @@ const clearChat = () => {
     document.getElementById('message').focus();
 }
 
+const addMessage = (res) => {
+    document.getElementById('chatarea').innerHTML += getOtherMessage(res);
+    scrollToLastMessage();
+}
+
 const convertToHtml = (text) => sanitize(text).split("\n").map((line) => line.trim() === "" ? "<p><br></p>" : `<p>${line}</p>`).join("");
 
 const sanitize = (text) => text.replace(/</g, "&lt;").replace(/>/g, "&gt;");
 
 const getOtherMessage = (res) => {
-    if (!res['data'] && !res['speech'])
-        return `<p class="notification">Server is unable to respond. Please try again.</p>`;
     let message = res['speech'] ? convertToHtml(res['speech']) : "";
     if (res['data']) {
         if (res['data']['code'])
@@ -80,7 +91,6 @@ const getMessage = (message, who) => {
     </div>
 </li>`
 }
-
 
 const getCurrentTime = () => {
     let now = new Date();
