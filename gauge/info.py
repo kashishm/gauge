@@ -67,3 +67,12 @@ There are many valuable ways to contribute to the product and to help the growin
         "Improve our Documentation": "https://github.com/getgauge/documentation",
         "Code for Gauge": "https://github.com/getgauge/gauge/wiki/Contributing",
     })
+
+
+def awesome(a, q):
+    return Result(message="""
+Gauge is an awesome open source,cross platform test automation tool.
+It's simple, collaborative, adaptable and awesome. Give it a try, you wont regret it.
+""", links={
+        "awesomeness": "http://getgauge.io",
+    })
