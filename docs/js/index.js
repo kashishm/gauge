@@ -32,16 +32,20 @@ const reply = () => {
 
 const handleResponse = (data) => {
     const res = data['result']['fulfillment'];
-    if (!res['data'] && !res['speech'])
-        client.textRequest(question).then(handleSecondResponse).catch(handleError);
-    addMessage(res);
+    if (!res['data'] && !res['speech']) {
+        client.textRequest(data['result']['resolvedQuery']).then(handleSecondResponse).catch(handleError);
+        return;
+    }
+    addMessage(getOtherMessage(res));
 }
 
 const handleSecondResponse = (data) => {
     const res = data['result']['fulfillment'];
-    if (!res['data'] && !res['speech'])
-        return `<p class="notification">Server is unable to respond. Please try again.</p>`;
-    addMessage(res);
+    if (!res['data'] && !res['speech']) {
+        addMessage('<p class="notification">Server is unable to respond. Please try again.</p>');
+        return;
+    }
+    addMessage(getOtherMessage(res));
 }
 
 const handleError = (error) => {
@@ -56,8 +60,8 @@ const clearChat = () => {
     document.getElementById('message').focus();
 }
 
-const addMessage = (res) => {
-    document.getElementById('chatarea').innerHTML += getOtherMessage(res);
+const addMessage = (message) => {
+    document.getElementById('chatarea').innerHTML += message;
     scrollToLastMessage();
 }
 
