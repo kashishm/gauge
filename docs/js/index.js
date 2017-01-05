@@ -8,6 +8,8 @@ const startResponses = [
     "Hey there! What can I help you with?"
 ];
 
+client.textRequest("Gauge");
+
 setTimeout(() => {
     document.getElementById('message').focus();
     let res = getMessage(convertToHtml(startResponses[Math.floor(Math.random() * startResponses.length)]), OTHER);
@@ -33,7 +35,9 @@ const reply = () => {
 const handleResponse = (data) => {
     const res = data['result']['fulfillment'];
     if (!res['data'] && !res['speech']) {
-        client.textRequest(data['result']['resolvedQuery']).then(handleSecondResponse).catch(handleError);
+        setTimeout(() => {
+            client.textRequest(data['result']['resolvedQuery']).then(handleSecondResponse).catch(handleError)
+        }, 1000);
         return;
     }
     addMessage(getOtherMessage(res));
