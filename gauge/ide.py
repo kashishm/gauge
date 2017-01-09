@@ -124,12 +124,12 @@ def ide(a, q):
     return Result(message="Gauge currently supports following IDE's",
                   links={
                       "IntelliJ": "http://getgauge.io/documentation/user/current/ide_support/intellij_idea.html",
-                      "VisualStudio": "http://getgauge.io/documentation/user/current/ide_support/visual_studio.html",
+                      "Visual Studio": "http://getgauge.io/documentation/user/current/ide_support/visual_studio.html",
                   })
 
 
 def ide_feature(args, query):
     ide = args["ide"].lower()
-    if ide in ide_support and args['feature'] in ide_support[ide]:
-        return ide_support[ide][args['feature']]
-    return Result(message="Feature {} is not supported in IDE {}.".format(args['feature'], args['ide']))
+    if ide in ide_support and args['ideFeature'] in ide_support[ide]:
+        return ide_support[ide][args['ideFeature']]
+    return Result(message="Feature {} is not supported in IDE {}.".format(args['ideFeature'], args['ide']))
