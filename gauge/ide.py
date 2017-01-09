@@ -133,3 +133,12 @@ def ide_feature(args, query):
     if ide in ide_support and args['ideFeature'] in ide_support[ide]:
         return ide_support[ide][args['ideFeature']]
     return Result(message="Feature {} is not supported in IDE {}.".format(args['ideFeature'], args['ide']))
+
+
+def ide_feature_list(args, query):
+    ide = args["ide_name"].lower()
+    if ide in ide_support:
+        return Result(message="""
+Following are the features:
+* """ + "* ".join(ide_support[ide].keys()))
+    return Result(message="IDE {} is not supported.".format(args['ide_name']))

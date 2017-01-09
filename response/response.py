@@ -4,7 +4,7 @@ from gauge.config import config
 from gauge.entity import define
 from gauge.errors import open_files, start_failed, validation_failed, gauge_api_error
 from gauge.execution import execution
-from gauge.ide import ide, ide_feature
+from gauge.ide import ide, ide_feature, ide_feature_list
 from gauge.info import gauge_info, why_gauge, examples, getting_started, feedback, contribute, awesome
 from gauge.init import project, initialization
 from gauge.init import skeleton
@@ -28,6 +28,7 @@ responses = {
     "plugin install location": install_location, "plugin offline installation": offline_installation,
     "too many open files": open_files, "failed to start a runner": start_failed, "validation failed": validation_failed,
     "gauge api error": gauge_api_error, "feedback": feedback, "contribution": contribute, "awesome": awesome,
+    "ide feature list": ide_feature_list,
 }
 
 
