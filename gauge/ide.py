@@ -121,9 +121,10 @@ ide_support = {
 
 
 def ide(a, q):
-    return Result(message='Gauge currently supports IntelliJ and Visual Studio.',
+    return Result(message="Gauge currently supports following IDE's",
                   links={
-                      DOCUMENTATION: "http://getgauge.io/plugins/index.html",
+                      "IntelliJ": "http://getgauge.io/documentation/user/current/ide_support/intellij_idea.html",
+                      "VisualStudio": "http://getgauge.io/documentation/user/current/ide_support/visual_studio.html",
                   })
 
 

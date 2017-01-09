@@ -36,4 +36,5 @@ To add above plugins to the project, just run the following command:.
 
 
 def report_details(args, query):
-    return reporting_plugins[args["plugin"]] if args["plugin"] in reporting_plugins else fallback(query)
+    return reporting_plugins[args["reportingPlugin"]] if args["reportingPlugin"] in reporting_plugins else fallback(
+        query)
